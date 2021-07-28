@@ -1,0 +1,3 @@
+execute: php artisan tinker
+commands
+App\Models\{NAMEMODEL}::{FUNCTION}
