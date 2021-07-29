@@ -25,8 +25,10 @@ Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/task', [TaskController::class, 'index'])->name('task');
-Route::get('task/create', [TaskController::class, 'create'])->name('task.create');
+    //tasks
+    Route::get('/task', [TaskController::class, 'index'])->name('task')->middleware('auth');;
+    Route::get('task/create', [TaskController::class, 'create'])->name('task.create')->middleware('auth');;
+    Route::post('task/create', [TaskController::class, 'store'])->name('task.store')->middleware('auth');;
 Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
 
 
@@ -45,4 +47,3 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
-

@@ -35,7 +35,22 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = [
+            'title' => 'required|min:3',
+            'text' => 'required|min:3',
+        ];
+        $this->validate($request, $rules);
+        
+        $task = Task::create([
+            'id_user' => auth()->user()->id,
+        ] + $request->all());
+
+        // Task::create($request->all());
+        //dd($request);
+
+        $notification = 'Tarea guardada';
+        return redirect('task')->with(compact('notification'));
+
     }
 
     /**
