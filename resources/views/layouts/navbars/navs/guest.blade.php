@@ -32,6 +32,11 @@
                         <i class="tim-icons icon-single-02"></i> {{ __('Login') }}
                     </a>
                 </li>
+                <li class="nav-item ">
+                    <a href="{{ route('task') }}" class="nav-link">
+                        <i class="tim-icons icon-notes"></i> Tareas
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
