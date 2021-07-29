@@ -7,7 +7,7 @@
       <div class="card-header">
         <h4 class="card-title"> Tareas</h4>
         </div>
-    <button class="btn btn-info btn-sm animation-on-hover" type="button">Crear</button>
+    <a href="{{ route('task.create') }}" class="btn btn-info btn-sm animation-on-hover" type="button">Crear</a>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table tablesorter " id="">
