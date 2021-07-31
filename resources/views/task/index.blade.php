@@ -54,8 +54,8 @@
                                             {{ $task->user->name }}
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-success btn-sm animation-on-hover"
-                                                type="button">Detalle</button>
+                                            <a href="{{ route('task.show', $task->id) }}" class="btn btn-success btn-sm animation-on-hover"
+                                                type="button">Detalle</a>
                                             <button class="btn btn-primary btn-sm animation-on-hover"
                                                 type="button">Editar</button>
                                             <button class="btn btn-danger btn-sm animation-on-hover"
