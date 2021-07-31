@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a href="{{ route('task') }}" class="nav-link">
+                    <a href="{{ route('task.index') }}" class="nav-link">
                         <i class="tim-icons icon-notes"></i> Tareas
                     </a>
                 </li>
