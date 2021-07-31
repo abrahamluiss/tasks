@@ -28,7 +28,10 @@ if (file_exists(__DIR__.'/../storage/framework/maintenance.php')) {
 | Composer provides a convenient, automatically generated class loader for
 | this application. We just need to utilize it! We'll simply require it
 | into the script here so we don't need to manually load our classes.
-|
+
+|Composer proporciona un cargador de clases conveniente y generado automáticamente para
+| esta aplicación. ¡Solo necesitamos utilizarlo! Simplemente lo necesitaremos
+| en el script aquí para que no tengamos que cargar nuestras clases manualmente.
 */
 
 require __DIR__.'/../vendor/autoload.php';
