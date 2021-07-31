@@ -26,9 +26,10 @@ Auth::routes();
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home')->middleware('auth');
 
     //tasks
-    Route::get('/task', [TaskController::class, 'index'])->name('task')->middleware('auth');;
-    Route::get('task/create', [TaskController::class, 'create'])->name('task.create')->middleware('auth');;
-    Route::post('task/create', [TaskController::class, 'store'])->name('task.store')->middleware('auth');;
+    // Route::get('/task', [TaskController::class, 'index'])->name('task')->middleware('auth');;
+    // Route::get('task/create', [TaskController::class, 'create'])->name('task.create')->middleware('auth');
+    // Route::post('task/create', [TaskController::class, 'store'])->name('task.store')->middleware('auth');
+    Route::resource('task', TaskController::class)->middleware('auth');
 Route::get('icons', ['as' => 'pages.icons', 'uses' => 'App\Http\Controllers\PageController@icons']);
 
 

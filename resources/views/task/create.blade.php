@@ -13,7 +13,7 @@
                         {{ session('notification') }}
                     </div>
                 @endif
-                <a href="{{ route('task') }}" class="btn btn-info btn-sm animation-on-hover" type="button">Atras</a>
+                <a href="{{ route('task.index') }}" class="btn btn-info btn-sm animation-on-hover" type="button">Atras</a>
 
                 <div class="card">
                     <div class="card-body">

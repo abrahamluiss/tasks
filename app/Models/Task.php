@@ -12,12 +12,12 @@ class Task extends Model
     protected $fillable = [
         'title',
         'text',
-        'id_user'
+        'user_id'
     ];
 
 
     public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);//un usuario tiene muchas tareas
     }
 }

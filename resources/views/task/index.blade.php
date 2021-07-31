@@ -24,10 +24,13 @@
                                         ID
                                     </th>
                                     <th>
-                                        Nombre
+                                        Titulo
                                     </th>
                                     <th>
                                         Descripción
+                                    </th>
+                                    <th>
+                                        Usuario
                                     </th>
                                     <th class="text-center">
                                         Opciones
@@ -35,23 +38,33 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        Dakota Rice
-                                    </td>
-                                    <td>
-                                        Niger
-                                    </td>
-                                    <td>
-                                        Oud-Turnhout
-                                    </td>
-                                    <td class="text-center">
-                                        <button class="btn btn-primary btn-sm animation-on-hover"
-                                            type="button">Editar</button>
-                                        <button class="btn btn-danger btn-sm animation-on-hover"
-                                            type="button">Eliminar</button>
-                                    </td>
-                                </tr>
+                                @foreach ($tasks as $task)
+                                    <tr>
+                                        <td>
+                                            {{ $task->id }}
+                                        </td>
+                                        <td>
+                                            {{ $task->title }}
+                                        </td>
+                                        <td>
+                                            {{ Str::limit($task->text, 10, '...') }}
+                                            {{-- {{ $task->text }} --}}
+                                        </td>
+                                        <td>
+                                            {{ $task->user->name }}
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-success btn-sm animation-on-hover"
+                                                type="button">Detalle</button>
+                                            <button class="btn btn-primary btn-sm animation-on-hover"
+                                                type="button">Editar</button>
+                                            <button class="btn btn-danger btn-sm animation-on-hover"
+                                                type="button">Eliminar</button>
+                                        </td>
+
+                                    </tr>
+                                @endforeach
+
 
                             </tbody>
                         </table>

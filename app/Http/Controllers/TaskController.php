@@ -14,7 +14,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('task.index');
+        $tasks = Task::all();
+        return view('task.index', compact('tasks'));
     }
 
     /**
@@ -40,9 +41,9 @@ class TaskController extends Controller
             'text' => 'required|min:3',
         ];
         $this->validate($request, $rules);
-        
+
         $task = Task::create([
-            'id_user' => auth()->user()->id,
+            'user_id' => auth()->user()->id,
         ] + $request->all());
 
         // Task::create($request->all());
