@@ -56,8 +56,7 @@
                                         <td class="text-center">
                                             <a href="{{ route('task.show', $task->id) }}" class="btn btn-success btn-sm animation-on-hover"
                                                 type="button">Detalle</a>
-                                            <button class="btn btn-primary btn-sm animation-on-hover"
-                                                type="button">Editar</button>
+                                            <a href="{{ route('task.edit', $task->id) }}" class="btn btn-primary btn-sm animation-on-hover">Editar</a>
                                             <button class="btn btn-danger btn-sm animation-on-hover"
                                                 type="button">Eliminar</button>
                                         </td>

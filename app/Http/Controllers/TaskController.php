@@ -60,11 +60,9 @@ class TaskController extends Controller
      * @param  \App\Models\Task  $task
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Task $task)
     {
-        //return view('task.show');
-        // $task= Task::find($id);
-        // return view('task.show', compact($taskDetail=Task::find($task)));
+        return view('task.show', compact('task'));
     }
 
     /**
@@ -75,7 +73,7 @@ class TaskController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return view('task.edit', compact('task'));
     }
 
     /**
@@ -87,7 +85,14 @@ class TaskController extends Controller
      */
     public function update(Request $request, Task $task)
     {
-        //
+        // dd($request);
+        $task->title = $request->input('title');
+        $task->text = $request->input('text');
+        $task->user_id = auth()->user()->id;
+        $task->save();
+
+        $notification = 'Tarea actualizada correctamente';
+        return redirect('task')->with(compact('notification'));
     }
 
     /**
