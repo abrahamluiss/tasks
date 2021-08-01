@@ -54,11 +54,16 @@
                                             {{ $task->user->name }}
                                         </td>
                                         <td class="text-center">
-                                            <a href="{{ route('task.show', $task->id) }}" class="btn btn-success btn-sm animation-on-hover"
-                                                type="button">Detalle</a>
-                                            <a href="{{ route('task.edit', $task->id) }}" class="btn btn-primary btn-sm animation-on-hover">Editar</a>
-                                            <button class="btn btn-danger btn-sm animation-on-hover"
-                                                type="button">Eliminar</button>
+
+                                            <form method="post" action="{{ route('task.destroy', $task->id) }}">
+                                                <a href="{{ route('task.show', $task->id) }}" class="btn btn-success btn-sm animation-on-hover"
+                                                    type="button">Detalle</a>
+                                                <a href="{{ route('task.edit', $task->id) }}" class="btn btn-primary btn-sm animation-on-hover">Editar</a>
+                                                @method('DELETE')
+                                                @csrf
+                                                <input class="btn btn-danger btn-sm animation-on-hover"
+                                                    type="submit" onclick="return confirm('¿Desea eliminar?')" value="Eliminar">
+                                            </form>
                                         </td>
 
                                     </tr>
